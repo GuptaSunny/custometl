@@ -10,16 +10,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class CustomDataAdapterTest {
 
-    @Autowired
-    SQLConnectionConfig  targetConnection;
-    @Autowired
-    FileConnectionConfig  sourceConnection;
 
     @Test
     void runETLTest() {
         DataAdapterConfig dataAdapterConfig = new DataAdapterConfig();
         dataAdapterConfig.setSourceConfig(new FileConnectionConfig("D://product.xlsx"));
-        dataAdapterConfig.setTargetConfig(targetConnection);
+        dataAdapterConfig.setTargetConfig(new SQLConnectionConfig());
         dataAdapterConfig.setDataSet(DataSet.PRODUCT);
                DataAdapter dataAdapter = new CustomDataAdapter(dataAdapterConfig);
         dataAdapter.runETL();

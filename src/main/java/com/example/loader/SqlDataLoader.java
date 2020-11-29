@@ -17,7 +17,6 @@ import java.util.List;
 @NoArgsConstructor
 @Slf4j
 public class SqlDataLoader implements DataLoader {
-    ProductRepository productRepository;
     DataSource dataSource;
 
     public int[] loadData(List<Object> objects) {

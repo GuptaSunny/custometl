@@ -2,6 +2,7 @@ package com.example.extractor;
 
 import com.example.dto.ProductDTO;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -15,6 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Slf4j
 @Service
 public class FileExtractor implements DataExtractor {

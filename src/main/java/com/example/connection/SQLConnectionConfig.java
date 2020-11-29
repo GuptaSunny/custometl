@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
@@ -18,10 +17,10 @@ import javax.sql.DataSource;
 @Slf4j
 @Service
 public class SQLConnectionConfig implements ConnectionConfig {
-    private String url = "dev-analytics-db.cs8vdm0hqlfe.ap-south-1.rds.amazonaws.com";
-    private String username = "analytics";
-    private String password = "analytics";
-    private String database = "test";
+    private String url;
+    private String username;
+    private String password;
+    private String database;
     private DataBaseEngine dataBaseEngine = DataBaseEngine.MYSQL;
 
     public DataExtractor getExtractor() {
@@ -31,6 +30,7 @@ public class SQLConnectionConfig implements ConnectionConfig {
     public DataLoader getLoader() {
         return new SqlDataLoader();
     }
+
 
     public DataSource createDataSource() {
         return DataSourceBuilder.create().username(username).password(password).url(buildURL())

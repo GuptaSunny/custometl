@@ -5,6 +5,7 @@ import com.example.extractor.FileExtractor;
 import com.example.loader.DataLoader;
 import com.example.loader.FileDataLoader;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -13,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Slf4j
 public class FileConnectionConfig implements ConnectionConfig {
     String filepath;
